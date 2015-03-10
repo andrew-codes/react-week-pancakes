@@ -48,7 +48,7 @@ module.exports = function (isProduction) {
                 })
             ];
             if (isProduction) {
-                plugins = plugins.concat[
+                plugins.push(
                     new ExtractTextPlugin('app.css', {
                         allChunks: true
                     }),
@@ -59,14 +59,14 @@ module.exports = function (isProduction) {
                                 warnings: false
                             }
                         })
-                    ];
+                );
             }
             else {
-                plugins = plugins.concat([
+                plugins.push(
                     NotifyPlugin,
                     new webpack.HotModuleReplacementPlugin(),
                     new webpack.NoErrorsPlugin()
-                ])
+                );
             }
             return plugins;
         })(),

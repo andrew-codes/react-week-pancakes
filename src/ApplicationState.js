@@ -1,13 +1,16 @@
 'use strict';
 
 import State from './lib/State';
+import Immutable from 'immutable';
 
-let applicationState = {
-  title: '',
-  issues: []
+const applicationState = process.env.IS_BROWSER ? window._appState :
+{
+    pageMeta: {
+        title: '',
+        currentUrl: '/'
+    },
+    issues: []
 };
-export default function setState(state) {
-  applicationState = state;
-}
 export const state = new State(applicationState);
-export const issues = state.cursor('issues');
+export const issues = state.cursor(['issues']);
+export const pageMeta = state.cursor(['pageMeta']);
