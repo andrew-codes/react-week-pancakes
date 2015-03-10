@@ -30,10 +30,10 @@ module.exports = function (isProduction) {
             './src/client/main.jsx'
         ],
         output: isProduction ? {
-            path: 'dist/',
+            path: './../dist',
             filename: 'app.js'
         } : {
-            path: path.join(__dirname, '/dist/'),
+            path: path.join(__dirname, './../dist'),
             filename: 'app.js',
             publicPath: 'http://localhost:8888/dist/'
         },
