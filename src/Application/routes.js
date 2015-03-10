@@ -8,7 +8,7 @@ export default Object.freeze({
         title: 'Pancakes: Github Issues',
         handler: Home
     },
-    'new/url':
+    '/new/url':
     {
         name: 'new-url',
         title: 'test',

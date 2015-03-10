@@ -14,7 +14,8 @@ export const dispatchToken = dispatcher.register((payload) => {
             pageMeta(() => {
                 return {
                     title: routes[url].title,
-                    currentUrl: url};
+                    currentUrl: url
+                };
             });
             break;
     }

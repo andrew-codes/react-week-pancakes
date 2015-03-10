@@ -10,9 +10,14 @@ PureRenderMixin = PureRenderMixin.addons.PureRenderMixin;
 export default React.createClass({
     mixins: [PureRenderMixin],
     componentWillMount() {
-        document.title = getPageMeta().get('title');
+        if (process.env.IS_BROWSER){
+            document.title = getPageMeta().title;
+        }
         state.on('change', () => {
-            document.title = getPageMeta().get('title');
+            if (process.env.IS_BROWSER){
+                document.title = getPageMeta().title;
+            }
+            //document.title = getPageMeta().get('title');
             this.forceUpdate();
         });
     },
