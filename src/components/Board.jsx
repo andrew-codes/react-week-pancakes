@@ -5,6 +5,7 @@ import {getStatusStates} from './../StatusStates/store';
 import {getIssues} from './../Issues/store';
 import Router from 'react-router';
 import StatusColumn from './StatusColumn';
+import {Paper} from 'material-ui';
 
 export default React.createClass({
     mixins: [Router.State],
@@ -14,6 +15,9 @@ export default React.createClass({
         let columnCount = statusStates.length;
         let columnWidth = 100 / columnCount;
         let styles = {
+            list: {
+                listStyle: 'none'
+            },
             statusColumn: {
                 width: `${columnWidth}%`,
                 display: 'inline-block',
@@ -21,18 +25,20 @@ export default React.createClass({
             }
         };
         return (
-            <ol>
+            <Paper zDepth={1} className="board">
+                <ol style={styles.list}>
             {statusStates.map((status, index) => {
                 let issuesInStatus = issues.filter(issue=> {
-                    return status.name === 'Backlog' || issue.state === 'open' && issue.labels.indexOf(status) > -1;
+                    return issue.state === 'open' && issue.statusState === status.name;
                 });
                 return (
-                    <li key={index} style={styles.statusColumn}>
+                    <li key={index} style={styles.statusColumn} className="status-column">
                         <StatusColumn status={status} issues={issuesInStatus}/>
                     </li>
                 );
             })}
-            </ol>
+                </ol>
+            </Paper>
         );
     }
 });

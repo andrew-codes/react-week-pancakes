@@ -5,7 +5,12 @@
 @column-width: 60;
 @gutter-width: 20;
 @columns: 12;
-@total-width: 1280px;
+@total-width: 100%;
+
+h1, h2, h3, h4, h5, h6 {
+  padding: 0;
+  margin: 0;
+}
 
 body {
   > div {
@@ -48,8 +53,19 @@ body {
     margin-top: -@size/2;
   }
 }
-.github-login{
-  .mui-text-field-hint{
+
+.github-login {
+  .mui-text-field-hint {
     color: #fff !important;
   }
+}
+
+.board {
+  > div {
+    .clearfix();
+  }
+}
+
+.status-column {
+  .clearfix();
 }

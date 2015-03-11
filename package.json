@@ -21,9 +21,11 @@
     "immutable": "^3.6.4",
     "material-ui": "^0.7.1",
     "react": "^0.12.2",
+    "react-dnd": "^0.9.6",
     "react-document-title": "^1.0.2",
     "react-router": "^0.12.4",
-    "react-tap-event-plugin": "^0.1.4"
+    "react-tap-event-plugin": "^0.1.4",
+    "underscore": "^1.8.2"
   },
   "devDependencies": {
     "autoprefixer-loader": "^1.2.0",
