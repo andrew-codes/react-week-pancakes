@@ -1,22 +1,23 @@
 'use strict';
 import Home from './../components/Home';
 import NotFound from './../components/NotFound';
+import Board from './../components/Board';
 
 export default Object.freeze({
-    '/': {
+    home: {
         name: 'home',
-        title: 'Pancakes: Github Issues',
+        path: '/',
         handler: Home
     },
-    '/new/url':
+    board:
     {
-        name: 'new-url',
-        title: 'test',
-        handler: Home
+        name: 'board',
+        path: 'board/:githubUserName/:repoName',
+        handler: Board
     },
     'not-found': {
         name: 'not-found',
-        title: 'Pancakes: Not Found',
+        path: 'not-found',
         handler: NotFound
     }
 });

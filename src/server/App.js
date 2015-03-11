@@ -7,12 +7,12 @@ import Routes from './../Routes';
 import routes from './../Application/routes';
 import DocumentTitle from 'react-document-title';
 import Html from './../components/Html';
+import {getRoute} from './../lib/RouteUtils.js';
 
 function renderRoute(Handler, config, path) {
     let data = {
         pageMeta: {
-            currentUrl: path,
-            title: routes[path].title
+            currentUrl: path
         },
         issues: []
     };

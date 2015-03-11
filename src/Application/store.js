@@ -4,6 +4,7 @@ import {pageMeta} from './../ApplicationState';
 import dispatcher from './../Dispatcher';
 import {navigate} from './actions';
 import routes from './routes';
+import {getRoute} from './../lib/RouteUtils.js';
 
 export const dispatchToken = dispatcher.register((payload) => {
     let {action, data} = payload;
@@ -13,7 +14,6 @@ export const dispatchToken = dispatcher.register((payload) => {
             let {url} = data;
             pageMeta(() => {
                 return {
-                    title: routes[url].title,
                     currentUrl: url
                 };
             });

@@ -8,12 +8,12 @@ import routes from './Application/routes';
 let routeComponents = Object.keys(routes).map((key)=> {
     let route = routes[key];
     if (key === '/') {
-        return <DefaultRoute name={route.name} handler={route.handler} key={key} />
+        return <DefaultRoute name={key} handler={route.handler} key={route.path} />
     }
     if (key === 'not-found') {
-        return <NotFoundRoute name={route.name} handler={route.handler} key={key} />
+        return <NotFoundRoute name={key} handler={route.handler} key={route.path} />
     }
-    return <Route name={route.name} handler={route.handler} path={key} key={key} />
+    return <Route name={key} handler={route.handler} path={route.path} key={route.path} />
 });
 export default (
     <Route handler={App} name="app" path="/">

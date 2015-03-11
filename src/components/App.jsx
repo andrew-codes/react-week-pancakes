@@ -6,27 +6,23 @@ import {state} from './../ApplicationState';
 import {getPageMeta} from './../Application/store';
 import PureRenderMixin from 'react/addons';
 PureRenderMixin = PureRenderMixin.addons.PureRenderMixin;
+import Header from './Header';
 
 export default React.createClass({
     mixins: [PureRenderMixin],
     componentWillMount() {
-        if (process.env.IS_BROWSER){
-            document.title = getPageMeta().title;
-        }
         state.on('change', () => {
-            if (process.env.IS_BROWSER){
-                document.title = getPageMeta().title;
-            }
-            //document.title = getPageMeta().get('title');
             this.forceUpdate();
         });
     },
     render() {
         return (
-            <main>
-                <h1>Github issues</h1>
-                <RouteHandler />
-            </main>
+            <div>
+                <Header />
+                <main>
+                    <RouteHandler />
+                </main>
+            </div>
         );
     }
 });
