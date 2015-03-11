@@ -12,13 +12,18 @@ export default React.createClass({
             accountDropDown = <AccountDropDown user={userInfo}/>
         }
         let styles = {
-            header: {
+            container: {
                 padding: 18
+            },
+            h1: {
+                margin: 0,
+                display: 'inline-block',
+                fontSize: '2rem'
             }
         };
         return (
-            <header style={styles.header}>
-                <h1>GitHub Issue Board</h1>
+            <header style={styles.container}>
+                <h1 style={styles.h1}>GitHub Issue Board</h1>
             {accountDropDown}
             </header>
         );

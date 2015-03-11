@@ -18,10 +18,16 @@ export default React.createClass({
         });
     },
     render() {
+        let styles = {
+            main: {
+                margin: '0 auto',
+                padding: '30px 0'
+            }
+        };
         return (
             <div>
-                <Header />
-                <main>
+                <Header/>
+                <main style={styles.main}>
                     <RouteHandler />
                 </main>
             </div>
