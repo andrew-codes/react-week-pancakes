@@ -14,7 +14,8 @@ function renderRoute(Handler, config, path) {
         pageMeta: {
             currentUrl: path
         },
-        issues: []
+        issues: [],
+        githubInfo: null
     };
     let appHtml = React.renderToString(<Handler />);
     let appScriptSrc = config.isProduction ? 'dist/bundle.js' : 'http://localhost:8888/dist/app.js';

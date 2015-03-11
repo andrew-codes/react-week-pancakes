@@ -10,10 +10,7 @@ const applicationState = process.env.IS_BROWSER ? window._appState :
         currentUrl: '/'
     },
     issues: [],
-    githubInfo: {
-        user: '',
-        repo: ''
-    }
+    githubInfo:null
 };
 export const state = new State(applicationState);
 export const issues = state.cursor(['issues']);

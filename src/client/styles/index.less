@@ -1,0 +1,21 @@
+@import './../../../node_modules/material-ui/src/less/scaffolding';
+@import './../../../node_modules/material-ui/src/less/components';
+@import './../../../web_modules/semantic-grid/stylesheets/less/grid';
+
+@column-width: 60;
+@gutter-width: 20;
+@columns: 12;
+@total-width: 1280;
+
+body {
+  > div {
+    > header {
+      .column(12);
+    }
+  }
+}
+
+.github-info {
+  .column(6);
+  .push(3);
+}

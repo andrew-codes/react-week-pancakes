@@ -13,6 +13,7 @@ server.use(bodyParser.urlencoded({
 }));
 server.use('/assets', express.static('assets/'));
 server.use('/dist', express.static('dist/'));
+server.use('/vendor', express.static('web_modules/'));
 server.use(function (request, response) {
     App.render(request.path, config)
         .then(function (result) {

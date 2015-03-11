@@ -7,6 +7,8 @@ import {getPageMeta} from './../Application/store';
 import PureRenderMixin from 'react/addons';
 PureRenderMixin = PureRenderMixin.addons.PureRenderMixin;
 import Header from './Header';
+var injectTapEventPlugin = require("react-tap-event-plugin");
+injectTapEventPlugin();
 
 export default React.createClass({
     mixins: [PureRenderMixin],

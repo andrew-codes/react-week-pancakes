@@ -13,6 +13,18 @@ let loaders = [
     {
         test: /\.styl/,
         loader: 'style!css!stylus'
+    },
+    {
+        test: /\.less/,
+        loader: 'style!css!less'
+    },
+    {
+        test: /\.(eot|ttf|woff)/,
+        loader: 'file'
+    },
+    {
+        test: /\.svg/,
+        loader: 'url'
     }
 ];
 module.exports = function (isProduction) {

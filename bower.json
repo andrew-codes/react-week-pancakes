@@ -17,6 +17,8 @@
     "tests"
   ],
   "dependencies": {
-    "normalize-stylus": "*"
+    "normalize-stylus": "*",
+    "material-ui-stylus": "*",
+    "semantic-grid": "*"
   }
 }
