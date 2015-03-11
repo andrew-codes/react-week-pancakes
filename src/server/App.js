@@ -18,7 +18,7 @@ function renderRoute(Handler, config, path) {
         githubInfo: null
     };
     let appHtml = React.renderToString(<Handler />);
-    let appScriptSrc = config.isProduction ? 'dist/bundle.js' : 'http://localhost:8888/dist/app.js';
+    let appScriptSrc = config.isProduction ? 'assets/bundle/bundle.js' : 'http://localhost:8888/assets/bundle/bundle.js';
     let scriptsHtml = `
         <script>window._appState = ${JSON.stringify(data)}</script>
         <script src="${appScriptSrc}"></script>
@@ -29,6 +29,9 @@ function renderRoute(Handler, config, path) {
     let htmlBody = React.renderToStaticMarkup(<Html bodyHtml={
         bodyHtml
         }
+        isProduction ={
+            config.isProduction
+            }
         title = {
             title
             } />);

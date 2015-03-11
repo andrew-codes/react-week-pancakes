@@ -4,6 +4,7 @@ import express from 'express';
 import App from './App';
 import bodyParser from 'body-parser';
 import config from './config';
+import path from 'path';
 
 var server = express();
 
@@ -11,9 +12,7 @@ server.use(bodyParser.json());
 server.use(bodyParser.urlencoded({
     extended: false
 }));
-server.use('/assets', express.static('assets/'));
-server.use('/dist', express.static('dist/'));
-server.use('/vendor', express.static('web_modules/'));
+server.use('/assets', express.static(path.join(__dirname, './../client/assets')));
 server.use(function (request, response) {
     App.render(request.path, config)
         .then(function (result) {

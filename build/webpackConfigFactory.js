@@ -5,28 +5,31 @@ import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import NotifyPlugin from './lib/notifyPlugin';
 import path from 'path';
 
-let loaders = [
-    {
-        test: /\.css$/,
-        loader: 'style!css'
-    },
-    {
-        test: /\.styl/,
-        loader: 'style!css!stylus'
-    },
-    {
-        test: /\.less/,
-        loader: 'style!css!less'
-    },
-    {
-        test: /\.(eot|ttf|woff)/,
-        loader: 'file'
-    },
-    {
-        test: /\.svg/,
-        loader: 'url'
-    }
-];
+function styleLoaders(isProduction) {
+    let loaders = [
+        {
+            test: /\.css$/,
+            loader: 'css-loader'
+        },
+        {
+            test: /\.styl$/,
+            loader: 'css-loader!stylus-loader'
+        },
+        {
+            test: /\.less$/,
+            loader: 'css-loader!less-loader'
+        }
+    ];
+    return loaders.map(loader => {
+        if (isProduction) {
+            loader.loader = ExtractTextPlugin.extract('style-loader', loader.loader);
+        }
+        else {
+            loader.loader = `style-loader!${loader.loader}`;
+        }
+        return loader;
+    });
+}
 module.exports = function (isProduction) {
     return {
         cache: !isProduction,
@@ -42,12 +45,12 @@ module.exports = function (isProduction) {
             './src/client/main.jsx'
         ],
         output: isProduction ? {
-            path: './../dist',
-            filename: 'app.js'
+            path: 'src/client/assets/bundle',
+            filename: 'bundle.js'
         } : {
-            path: path.join(__dirname, './../dist'),
-            filename: 'app.js',
-            publicPath: 'http://localhost:8888/dist/'
+            path: path.join(__dirname, './src/client/assets/bundle'),
+            filename: 'bundle.js',
+            publicPath: 'http://localhost:8888/assets/bundle/'
         },
         plugins: (function () {
             let plugins = [
@@ -64,13 +67,13 @@ module.exports = function (isProduction) {
                     new ExtractTextPlugin('app.css', {
                         allChunks: true
                     }),
-                        new webpack.optimize.DedupePlugin(),
-                        new webpack.optimize.OccurenceOrderPlugin(),
-                        new webpack.optimize.UglifyJsPlugin({
-                            compress: {
-                                warnings: false
-                            }
-                        })
+                    new webpack.optimize.DedupePlugin(),
+                    new webpack.optimize.OccurenceOrderPlugin(),
+                    new webpack.optimize.UglifyJsPlugin({
+                        compress: {
+                            warnings: false
+                        }
+                    })
                 );
             }
             else {
@@ -90,7 +93,15 @@ module.exports = function (isProduction) {
                 test: /\.(jsx|js)$/,
                 exclude: /node_modules/,
                 loaders: isProduction ? ['babel'] : ['react-hot', 'babel']
-            }].concat(loaders)
+            },
+                {
+                    test: /\.(eot|ttf|woff)/,
+                    loader: 'file'
+                },
+                {
+                    test: /\.svg/,
+                    loader: 'url'
+                }].concat(styleLoaders(isProduction))
         }
     };
 };

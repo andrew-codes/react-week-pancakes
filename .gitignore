@@ -1,5 +1,5 @@
 node_modules
-.idea
-/dist
-npm-debug.log
 /web_modules
+.idea
+/src/client/assets/bundle
+npm-debug.log
