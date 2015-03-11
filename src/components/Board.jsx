@@ -11,6 +11,15 @@ export default React.createClass({
     render() {
         const statusStates = getStatusStates();
         const issues = getIssues();
+        let columnCount = statusStates.length;
+        let columnWidth = 100 / columnCount;
+        let styles = {
+            statusColumn: {
+                width: `${columnWidth}%`,
+                display: 'inline-block',
+                float: 'left'
+            }
+        };
         return (
             <ol>
             {statusStates.map((status, index) => {
@@ -18,9 +27,9 @@ export default React.createClass({
                     return status.name === 'Backlog' || issue.state === 'open' && issue.labels.indexOf(status) > -1;
                 });
                 return (
-                    <li key={index}>
-                    <StatusColumn status={status} issues={issuesInStatus}/>
-                </li>
+                    <li key={index} style={styles.statusColumn}>
+                        <StatusColumn status={status} issues={issuesInStatus}/>
+                    </li>
                 );
             })}
             </ol>

@@ -1,0 +1,22 @@
+{
+  "name": "react-week-github-issues",
+  "main": "index.js",
+  "version": "0.0.0",
+  "private": true,
+  "homepage": "https://github.com/andrew-codes/react-week-pancakes",
+  "authors": [
+    "Andrew Smith <andrew@WeAreSoftwareCraftsmen.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "web_modules",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "normalize-stylus": "*"
+  }
+}

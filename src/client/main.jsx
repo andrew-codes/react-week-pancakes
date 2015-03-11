@@ -6,6 +6,7 @@ import Routes from './../Routes';
 import {setRouter} from './RouterContainer';
 import {navigate} from './../Application/actions';
 
+require('./styles/index.styl');
 
 window.app = () => {
     setRouter(Router.create(Routes));

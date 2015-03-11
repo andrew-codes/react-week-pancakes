@@ -71,7 +71,7 @@ module.exports = function (isProduction) {
             return plugins;
         })(),
         resolve: {
-            extensions: ['', '.js', '.jsx', '.json']
+            extensions: ['', '.js', '.jsx', '.json', 'styl']
         },
         module: {
             loaders: [{
