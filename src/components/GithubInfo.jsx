@@ -26,11 +26,39 @@ export default React.createClass({
         });
     },
     render() {
+        let styles = {
+            container: {
+                background: '',
+                padding: '40px'
+            },
+            heading: {
+                padding: 0,
+                width: '180px',
+                display: 'block',
+                color: 'slategray'
+            },
+            fields: {
+                marginLeft: '20px',
+                display: 'inline-block'
+            },
+            button:{
+                float: 'right'
+            }
+        };
         return (
-            <section className="github-info">
-                <TextField hintText="github username" ref="username" onChange={this.validateUsername} />
-                <TextField hintText="repo name" ref="repo" onChange={this.validateRepo}/>
-                <RaisedButton onClick={this.loadGithubInfo} label="Go" primary={true}/>
+            <section style={styles.container} className="github-info">
+                <h3 style={styles.heading}>View a Repo</h3>
+                <div style={styles.fields}>
+                    <div style={styles.field}>
+                        <TextField hintText="github username" ref="username" onChange={this.validateUsername} />
+                    </div>
+                    <div style={styles.field}>
+                        <TextField hintText="repo name" ref="repo" onChange={this.validateRepo}/>
+                    </div>
+                    <div style={styles.button}>
+                        <RaisedButton onClick={this.loadGithubInfo} label="Go" primary={true}/>
+                    </div>
+                </div>
             </section>
         );
     }

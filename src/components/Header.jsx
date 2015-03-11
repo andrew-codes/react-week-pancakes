@@ -13,7 +13,8 @@ export default React.createClass({
         }
         let styles = {
             container: {
-                padding: 18
+                padding: '18px',
+                background: 'slategray'
             },
             h1: {
                 margin: 0,

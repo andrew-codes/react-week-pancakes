@@ -5,17 +5,51 @@
 @column-width: 60;
 @gutter-width: 20;
 @columns: 12;
-@total-width: 1280;
+@total-width: 1280px;
 
 body {
   > div {
     > header {
-      background: @cyan-700;
+    }
+    main {
+      width: @total-width;
     }
   }
 }
 
-.github-info {
-  .column(6);
-  .push(3);
+.divider {
+  @size : 80px;
+  display: block;
+  clear: both;
+  position: relative;
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: slategray;
+    z-index: 1;
+  }
+  &:after {
+    z-index: 2;
+    text-align: center;
+    color: slategray;
+    font-size: @size/2;
+    background: #fff;
+    border-radius: 50%;
+    content: attr(data-text);
+    width: @size;
+    height: @size;
+    position: absolute;
+    left: 50%;
+    line-height: @size;
+    margin-left: -(@size / 2);
+    margin-top: -@size/2;
+  }
+}
+.github-login{
+  .mui-text-field-hint{
+    color: #fff !important;
+  }
 }

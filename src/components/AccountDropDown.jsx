@@ -13,7 +13,7 @@ export default React.createClass({
                 height: '50px',
                 width: '50px',
                 borderRadius: "50%",
-                border: '1px solid blue'
+                border: '1px solid white'
             },
             name: {
                 verticalAlign: 'text-bottom',

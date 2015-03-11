@@ -20,8 +20,7 @@ export default React.createClass({
     render() {
         let styles = {
             main: {
-                margin: '0 auto',
-                padding: '30px 0'
+                margin: '0 auto'
             }
         };
         return (

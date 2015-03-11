@@ -9,15 +9,15 @@ function styleLoaders(isProduction) {
     let loaders = [
         {
             test: /\.css$/,
-            loader: 'css-loader'
+            loader: 'css-loader!autoprefixer'
         },
         {
             test: /\.styl$/,
-            loader: 'css-loader!stylus-loader'
+            loader: 'css-loader!autoprefixer!stylus-loader'
         },
         {
             test: /\.less$/,
-            loader: 'css-loader!less-loader'
+            loader: 'css-loader!autoprefixer!less-loader'
         }
     ];
     return loaders.map(loader => {
