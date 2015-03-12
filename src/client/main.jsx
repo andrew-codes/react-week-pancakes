@@ -4,7 +4,7 @@ import React from 'react';
 import Router from 'react-router';
 import Routes from './../Routes';
 import {setRouter} from './RouterContainer';
-import {navigate} from './../Application/actions';
+import {navigate} from './../actions/ApplicationActions';
 
 require('./styles/index.less');
 

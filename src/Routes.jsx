@@ -3,7 +3,7 @@
 import React from 'react';
 import {Route, DefaultRoute, NotFoundRoute} from 'react-router';
 import App from './components/App';
-import routes from './Application/routes';
+import routes from './stores/Routes';
 
 let routeComponents = Object.keys(routes).map((key)=> {
     let route = routes[key];

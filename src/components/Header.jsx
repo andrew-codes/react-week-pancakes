@@ -2,7 +2,7 @@
 
 import React from 'react';
 import AccountDropDown from './AccountDropDown';
-import {getGithubInfo} from './../GithubInfo/store';
+import {getGithubInfo} from './../stores/GithubAccountStore';
 
 export default React.createClass({
     render() {

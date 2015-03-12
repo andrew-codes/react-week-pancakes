@@ -4,7 +4,7 @@ import React from 'react';
 import IssueCard from './IssueCard';
 import ItemTypes from './../lib/ItemTypes';
 import {DragDropMixin} from 'react-dnd';
-import {moveIssue} from './../Issues/actions';
+import {moveIssue} from './../actions/IssueActions';
 
 export default React.createClass({
     mixins: [DragDropMixin],

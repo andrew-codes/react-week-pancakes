@@ -1,8 +1,8 @@
 'use strict';
 
 import React from 'react';
-import {getStatusStates} from './../StatusStates/store';
-import {getIssues} from './../Issues/store';
+import {getStatusStates} from './../stores/StatusStateStore';
+import {getIssues} from './../stores/IssueStore';
 import Router from 'react-router';
 import StatusColumn from './StatusColumn';
 import {Paper} from 'material-ui';

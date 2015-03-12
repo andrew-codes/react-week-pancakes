@@ -1,7 +1,7 @@
 'use strict';
 
 import React from 'react';
-import {setGithubInfo} from './../GithubInfo/actions';
+import {setGithubInfo} from './../actions/GithubInfoActions';
 import Router from 'react-router';
 import {TextField, RaisedButton} from 'material-ui';
 import {isRequired} from './../lib/validation';

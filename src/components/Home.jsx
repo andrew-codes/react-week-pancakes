@@ -1,7 +1,7 @@
 'use strict';
 
 import React from 'react';
-import {getPageMeta} from './../Application/store';
+import {getPageMeta} from './../stores/ApplicationStore';
 import Router from 'react-router';
 import GithubInfo from './GithubInfo';
 import Login from './Login';

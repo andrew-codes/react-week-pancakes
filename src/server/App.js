@@ -4,10 +4,8 @@ import React from 'react';
 import Promise from 'bluebird';
 import Router from 'react-router';
 import Routes from './../Routes';
-import routes from './../Application/routes';
 import DocumentTitle from 'react-document-title';
 import Html from './../components/Html';
-import {getRoute} from './../lib/RouteUtils.js';
 
 function renderRoute(Handler, config, path) {
     let data = {

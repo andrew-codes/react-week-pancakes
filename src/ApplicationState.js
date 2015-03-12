@@ -13,6 +13,6 @@ const applicationState = process.env.IS_BROWSER ? window._appState :
     githubInfo:null
 };
 export const state = new State(applicationState);
-export const issues = state.cursor(['issues']);
 export const pageMeta = state.cursor(['pageMeta']);
 export const githubInfo = state.cursor(['githubInfo']);
+export const issues = state.cursor(['issues']);

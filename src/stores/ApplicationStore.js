@@ -2,9 +2,8 @@
 
 import {pageMeta} from './../ApplicationState';
 import dispatcher from './../Dispatcher';
-import {navigate} from './actions';
-import routes from './routes';
-import {getRoute} from './../lib/RouteUtils.js';
+import {navigate} from './../actions/ApplicationActions';
+import routes from './Routes';
 
 export const dispatchToken = dispatcher.register((payload) => {
     let {action, data} = payload;

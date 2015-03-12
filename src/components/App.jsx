@@ -3,7 +3,7 @@
 import React from 'react';
 import {RouteHandler} from 'react-router';
 import {state} from './../ApplicationState';
-import {getPageMeta} from './../Application/store';
+import {getPageMeta} from './../stores/ApplicationStore';
 import PureRenderMixin from 'react/addons';
 PureRenderMixin = PureRenderMixin.addons.PureRenderMixin;
 import Header from './Header';
