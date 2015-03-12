@@ -5,9 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "./node_modules/gulp/bin/gulp.js",
-    "start-server": "./node_modules/gulp/bin/gulp.js start-server",
-    "webpack": "./node_modules/gulp/bin/gulp.js webpack",
-    "webpack-dev": "./node_modules/gulp/bin/gulp.js webpack-dev"
+    "start-production": "NODE_ENV=production ./node_modules/gulp/bin/gulp.js start-server webpack"
   },
   "author": "",
   "license": "ISC",
