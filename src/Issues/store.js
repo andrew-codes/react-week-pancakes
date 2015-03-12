@@ -2,14 +2,14 @@
 
 import {issues} from './../ApplicationState';
 import dispatcher from './../Dispatcher';
-import {loadIssues, moveIssue} from './actions';
+import {fetchGithubIssues, moveIssue} from './actions';
 import _ from 'underscore';
 
 export const dispatchToken = dispatcher.register((payload)=> {
     let {action, data} = payload;
     switch (action) {
-        case loadIssues:
-            issues((issues)=> {
+        case fetchGithubIssues:
+            issues(()=> {
                 return data;
             });
             break;

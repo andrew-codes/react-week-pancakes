@@ -10,11 +10,11 @@ import {Paper} from 'material-ui';
 export default React.createClass({
     render() {
         return (
-            <Paper zDepth={1}>
+            <div>
                 <GithubInfo />
                 <span className="divider" data-text="or"></span>
                 <Login />
-            </Paper>
+            </div>
         );
     }
 });

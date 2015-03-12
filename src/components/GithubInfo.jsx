@@ -28,7 +28,7 @@ export default React.createClass({
     render() {
         let styles = {
             container: {
-                background: '',
+                background: '#fff',
                 padding: '40px'
             },
             heading: {

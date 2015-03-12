@@ -2,7 +2,7 @@
 
 import dispatcher from './../Dispatcher';
 import axios from 'axios';
-import {loadIssues} from './../Issues/actions';
+import {fetchGithubIssues} from './../Issues/actions';
 
 export function setGithubInfo(username, repo) {
     axios.get(`http://api.github.com/users/${username}`)
@@ -16,8 +16,7 @@ export function setGithubInfo(username, repo) {
             });
             return result;
         })
-        .then(function (result) {
-            loadIssues(username, repo);
-            return result;
+        .then(()=> {
+            fetchGithubIssues(username, repo);
         });
 }
